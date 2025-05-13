@@ -45,38 +45,6 @@ boxes.forEach((box) => {
     });
 });
 
-// const checkWinner = () =>{
-//     let msg = document.getElementById("msg");
-
-//     for (pattern of winPatterns){
-//         // console.log(
-//         //     boxes[pattern[0]], 
-//         //     boxes[pattern[1]], 
-//         //     boxes[pattern[2]]
-//         // )
-//         let pos1Val = boxes[pattern[0]].innerText;
-//         let pos2Val = boxes[pattern[1]].innerText;
-//         let pos3Val = boxes[pattern[2]].innerText;
-//         if (pos1Val != "" && pos2Val != "" && pos3Val != ""){
-//             if (pos1Val === pos2Val && pos2Val === pos3Val) {
-//                 // if (turnX){
-//                 //     // console.log("Player Second WINS")
-//                 //     playerTurn.innerText = ""
-//                 //     msg.innerText = "Player Second WINS!"
-//                 //     }
-//                 //     else{
-//                 //     // console.log("Player First WINS")
-//                 //     playerTurn.innerText = ""
-//                 //     msg.innerText = "Player First WINS!"
-//                 //     }
-//                 gameWon(pos1Val);
-                
-//             }     
-//         }
-
-//     }
-// }
-
 
 const checkWinner = () => {
     let winnerFound = false;
@@ -101,12 +69,12 @@ const checkWinner = () => {
 };
 
 
-
 const freezeGame = ()=>{
     for (box of boxes){
         box.disabled = true;
     }
 }
+
 
 const defreezeGame = ()=>{
     for (box of boxes){
@@ -115,6 +83,7 @@ const defreezeGame = ()=>{
     }
 }
 
+
 const gameWon = (who) =>{
     playerTurn.innerText = ""
     msg.innerText = `Congratulations ${who}  WINS!`
@@ -122,6 +91,7 @@ const gameWon = (who) =>{
     newGameBtn.classList.remove("hide");
     freezeGame();
 }
+
 
 const gameTie = () =>{
     count = 0;
@@ -132,6 +102,7 @@ const gameTie = () =>{
     freezeGame();
 
 }
+
 
 const resetGame = () =>{
     turnX= true;
@@ -152,7 +123,6 @@ const newGame = () =>{
     playerTurn.innerText = "Turn of First Player!"
 
 }
-
 
 
 resetBtn.addEventListener("click", resetGame)
